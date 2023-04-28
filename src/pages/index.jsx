@@ -46,6 +46,12 @@ export default function Home() {
             ))
           }
         </Carousel>
+        <div className="flex h-full p-2 flex-wrap">
+          <div className="w-1/3 h-full  bg-green-500"></div>
+          <div className="w-1/3 h-full  bg-yellow-500"></div>
+          <div className="w-1/3 h-full  bg-blue-500"></div>
+          <div className="w-1/3 h-full bg-red-500"></div>
+        </div>
       </div>
     </MainLayout>
   )
