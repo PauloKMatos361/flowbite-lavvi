@@ -23,15 +23,15 @@ function SidebarMenu() {
         <Sidebar.Items>
           <Sidebar.ItemGroup>
 
-            <Sidebar.Collapse icon={HiOutlinePencil} label="Cadastro">
-            <Sidebar.Item href="#" icon={HiOutlineBuildingLibrary}>
+            <Sidebar.Collapse href="/cadastro" icon={HiOutlinePencil} label="Cadastro">
+            <Sidebar.Item href="/cadastro/dados-bancarios" icon={HiOutlineBuildingLibrary}>
               Dados Bancários
             </Sidebar.Item>
-            <Sidebar.Item href="#" icon={HiUser}>
+            <Sidebar.Item href="/cadastro/dados-pessoais" icon={HiUser}>
               Dados Pessoais
             </Sidebar.Item>
-            <Sidebar.Item href="#" icon={HiIdentification}>
-              Dados Pessoais
+            <Sidebar.Item href="/cadastro/documentos" icon={HiIdentification}>
+              Documentos
             </Sidebar.Item>
 
             </Sidebar.Collapse>

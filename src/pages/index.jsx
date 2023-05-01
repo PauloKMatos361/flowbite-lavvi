@@ -1,5 +1,6 @@
+import ChartBars from '@/components/ChartBars';
 import MainLayout from '@/layouts/MainLayout';
-import { Carousel } from 'flowbite-react';
+import { Card, Carousel, Progress } from 'flowbite-react';
 
 const slides = [
   {
@@ -30,6 +31,37 @@ const slides = [
   },
 ];
 
+const Cards = [
+  {
+      title:"vgv",
+      color:"#00ACAC",
+      valueInfo:"7,842.00",
+      legend:"15% Better than last week",
+      progressPercentage:15
+  },
+  {
+      title:"Cadastro de Leads",
+      color:"#348FE2",
+      valueInfo:"180.200",
+      legend:"63% Better than last week",
+      progressPercentage:63
+  },
+  {
+      title:"Pontos a liberar",
+      color:"#727CB6",
+      valueInfo:"38.900",
+      legend:"18% Better than last week",
+      progressPercentage:18
+  },
+  {
+      title:"Pontos resgatados",
+      color:"#2D353C",
+      valueInfo:"3.988",
+      legend:"37% Better than last week ",
+      progressPercentage:37
+  }
+];
+
 export default function Home() {
   return (
     <MainLayout>
@@ -46,11 +78,23 @@ export default function Home() {
             ))
           }
         </Carousel>
-        <div className="flex h-full p-2 flex-wrap">
-          <div className="w-1/3 h-full  bg-green-500"></div>
-          <div className="w-1/3 h-full  bg-yellow-500"></div>
-          <div className="w-1/3 h-full  bg-blue-500"></div>
-          <div className="w-1/3 h-full bg-red-500"></div>
+        <div className="grid w-full gap-2 grid-cols-2 h-full px-2 py-4">
+          <div className="grid gap-2 grid-cols-2 h-full p-2 ">
+            {Cards.map( (card, index) => (
+              <div className='h-full w-full flex flex-col px-2 py-3 justify-between rounded-md bg-slate-800 gap-0'>
+                <h2 className='m-0 uppercase text-gray-300'> {card.title} </h2>
+                  <span className="text-gray-400  text-2xl"> {card.valueInfo} </span>
+                  <p className="text-gray-400  text-sm"> {card.legend} </p>
+                <Progress
+                  progress={card.progressPercentage}
+                  color="dark"
+                />
+              </div>
+            ))}
+          </div>
+          <div className=''>
+            <ChartBars />
+          </div>
         </div>
       </div>
     </MainLayout>
